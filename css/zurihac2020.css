@@ -179,6 +179,77 @@ nav:not(:target) {
 }
 
 /*******************************************************************************
+ * Schedule calendar */
+ .timetable {
+  display: flex;
+  color: #fff;
+  text-transform: uppercase;
+  flex-direction: column;
+  font-family: "Futura",Verdana,Tahoma,Helvetica,Arial,sans-serif;
+}
+
+
+@media (min-width: 768px) {
+  .timetable {
+    flex-direction: row;
+  }
+}
+
+.timetable .sequential {
+  border-right: 1px solid #ffe0c4;
+  flex-basis: 0;  /* Don't take content into account when calculating width. */
+  flex-grow: 1;
+}
+
+.timetable .sequential:last-child {
+  border-right: none;
+}
+
+.timetable .parallel {
+  display: flex;
+  flex-direction: row;
+}
+
+.timetable .day {
+  border-bottom: 1px solid #ffe0c4;
+  font-size: 16px;
+  font-weight: bold;
+  margin-top: 12px;
+  padding: 6px;
+}
+
+.event {
+  padding: 0px 6px 0px 6px;
+  /* border-bottom: 1px solid #ffe0c4; */
+  font-size: 12px;
+  overflow: hidden;
+  display: block;
+  color: #fff;
+}
+
+/* Color scheme-ish for schedule */
+ .timetable .day     {background-color: #ffe0c4; color: #339;}
+ .timetable .admin   {background-color: #5f8f71;}
+ .timetable .keynote {background-color: rgb(72, 72, 202);}
+ .timetable .food    {background-color: #ffedcb; color: #339;}
+ .timetable .tracks  {background-color: #c84b29;}
+ .timetable .hacking {background-color: #f2ca96; color: #339}
+
+ /* Oh man.  The things I go through to get a pretty schedule table. */
+ .timetable .d0h15m {height: calc( 1 * 12px);}
+ .timetable .d0h30m {height: calc( 2 * 12px);}
+ .timetable .d0h45m {height: calc( 3 * 12px);}
+ .timetable .d1h00m {height: calc( 4 * 12px);}
+ .timetable .d1h15m {height: calc( 5 * 12px);}
+ .timetable .d1h30m {height: calc( 6 * 12px);}
+ .timetable .d1h45m {height: calc( 7 * 12px);}
+ .timetable .d2h00m {height: calc( 8 * 12px);}
+ .timetable .d2h15m {height: calc( 9 * 12px);}
+ .timetable .d2h30m {height: calc(10 * 12px);}
+ .timetable .d2h45m {height: calc(11 * 12px);}
+ .timetable .d3h00m {height: calc(12 * 12px);}
+
+/*******************************************************************************
  * Speakers */
 
 .speakers {
